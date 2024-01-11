@@ -54,7 +54,7 @@ public class HotelController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<?> putMethodName(@PathVariable Integer id, @RequestBody Hotel entity) {
+	public ResponseEntity<?> updateHotel(@PathVariable Integer id, @RequestBody Hotel entity) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(impl.updateHotel(id, entity));
 		} catch (Exception e) {
@@ -63,7 +63,7 @@ public class HotelController {
 	} 
 	
 	@GetMapping("/hotelById")
-	public ResponseEntity<?> getMethodName(@RequestParam Integer id) {
+	public ResponseEntity<?> getHotelById(@RequestParam Integer id) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(impl.getHotelById(id));
 		} catch (Exception e) {
